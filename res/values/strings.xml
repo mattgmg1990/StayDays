@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="hello">Hello World, Home!</string>
+    <string name="app_name">LOSer</string>
+    <color name="selected_button_color">#6E9489</color>
+	<string name="age_prompt">Select Your Age Group</string>
+	<string-array name="age_groups_array">
+        <item>Under 65</item>
+        <item>65 - 69</item>
+        <item>70 - 74</item>
+        <item>75 - 79</item>
+        <item>80 - 84</item>
+        <item>85 \u0026 Older</item>
+    </string-array>
+	    
+</resources>

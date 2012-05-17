@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="#DEDCC3"
+    android:orientation="vertical" >
+
+	<TextView
+			android:text="StayDays"
+			android:textSize="12pt"
+			android:textStyle="bold"
+			android:typeface="sans"
+			android:layout_width="fill_parent"
+			android:layout_height="wrap_content"
+			android:background="@drawable/main_gradient"
+			android:textColor="#FFFFFF"
+	    	android:gravity="center"
+			android:padding="5dp"/>
+	
+	<LinearLayout
+	    android:layout_width="fill_parent"
+	    android:layout_height="fill_parent"
+	    android:orientation="vertical"
+	    android:layout_marginLeft="12dp"
+	    android:layout_marginRight="12dp"
+		android:layout_marginTop="10dp"
+		android:layout_marginBottom="5dp">
+	
+	<TextView
+			android:text="Enter the Patient's Diagnosis:"
+			android:textSize="8pt"
+			android:typeface="sans"
+			android:layout_width="fill_parent"
+			android:layout_height="wrap_content"
+			android:textColor="#000000"
+			android:textStyle="bold"
+	    	android:gravity="left"
+		   	android:layout_marginBottom="3dp"/>
+	
+	<AutoCompleteTextView android:id="@+id/autocomplete_diagnosis"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"/>
+	
+	<TextView
+			android:text="Select Patient's Gender:"
+			android:textSize="8pt"
+			android:typeface="sans"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:textColor="#000000"
+			android:textStyle="bold"
+	    	android:gravity="center"
+		   	android:layout_marginBottom="8dp"/>
+	
+		<RelativeLayout
+		    android:layout_width="fill_parent"
+		    android:layout_height="wrap_content"
+		    android:layout_marginBottom="10dp"
+		    android:gravity="left">
+		
+			<ImageButton android:id="@+id/male_button"
+		        android:layout_width="wrap_content"
+		        android:layout_height="wrap_content"
+		        android:src="@drawable/man_icon"
+		        android:background="@null"
+		        android:textOn=""
+		        android:textOff=""
+		        android:onClick="onGenderClicked"/>
+			
+			<ImageButton android:id="@+id/female_button"
+		        android:layout_width="wrap_content"
+		        android:layout_height="wrap_content"
+		        android:layout_toRightOf="@id/male_button"
+		        android:src="@drawable/woman_icon"
+		        android:background="@null"
+		        android:textOn=""
+		        android:textOff=""
+		        android:onClick="onGenderClicked"/>
+		</RelativeLayout>
+		
+		<TextView
+			android:text="Select Patient's Age Group:"
+			android:textSize="8pt"
+			android:typeface="sans"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:textColor="#000000"
+			android:textStyle="bold"
+	    	android:gravity="left"
+		   	android:layout_marginBottom="3dp"/>
+		    
+		<Spinner 
+	        android:id="@+id/age_group"
+	        android:layout_width="fill_parent"
+	        android:layout_height="wrap_content"
+	        android:prompt="@string/age_prompt"
+	        android:title="@string/age_prompt"/>
+		
+		<Button
+		    android:id="@+id/calculate_button"
+		    android:layout_width="wrap_content"
+		    android:layout_height="75dp"
+		    android:text="Calculate Estimated Length of Stay"
+		    android:textStyle="bold"
+		    android:textSize="8pt"
+		    android:background="@drawable/calculate_button_gradient"
+		    android:padding="10dp"
+		    android:layout_gravity="center"
+		    android:layout_marginTop="30px"
+		    android:onClick="onCalculateClicked" />
+		
+	</LinearLayout>
+	
+		
+</LinearLayout>
