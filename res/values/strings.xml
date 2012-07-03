@@ -2,9 +2,17 @@
 <resources>
 
     <string name="hello">Hello World, Home!</string>
-    <string name="app_name">LOSer</string>
+    <string name="app_name">StayDays</string>
     <color name="selected_button_color">#6E9489</color>
 	<string name="age_prompt">Select Your Age Group</string>
+	<string name="about_title">About StayDays</string>
+	<string name="about_text">StayDays was created at the Health 2.0 Boston Big Data Code-a-thon 
+	on May 12th, 2012 by Henry Wei, M.D. and Matt Garnes. It was a runner up prize winner in 
+	the contest! \n \nThe single data source that fuels the application is the public use file of inpatient claims drawn from the 2008 Beneficiary Summary File of 
+	Medicare beneficiaries enrolled during the calendar year 2008. It is available online at: \n\n
+	<a>https://explore.data.gov/Health-and-Nutrition/2008-Basic-Stand-Alone-Inpatient-Claims-PUF/peih-fvbs</a> \n \n
+	This application is an open source project, feel free to view the source code on Github at: \n\n
+	<a>https://github.com/mattgmg1990/StayDays</a> \n \n Thanks for using StayDays!</string>
 	<string-array name="age_groups_array">
         <item>Under 65</item>
         <item>65 - 69</item>

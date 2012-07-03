@@ -19,17 +19,17 @@
 	
 	<ScrollView
 	     android:layout_width="fill_parent"
-    	 android:layout_height="fill_parent">
+    	 android:layout_height="fill_parent"
+    	 android:layout_marginLeft="12dp"
+    	 android:layout_marginRight="12dp"
+		 android:layout_marginTop="10dp"
+		 android:layout_marginBottom="5dp">
 
 	
 	<LinearLayout
 	    android:layout_width="fill_parent"
 	    android:layout_height="fill_parent"
-	    android:orientation="vertical"
-	    android:layout_marginLeft="12dp"
-	    android:layout_marginRight="12dp"
-		android:layout_marginTop="10dp"
-		android:layout_marginBottom="5dp">
+	    android:orientation="vertical" >
 	
 	<TextView
 			android:text="Estimated Hospital Stay Time:"
@@ -234,6 +234,22 @@
 				android:textStyle="bold"/>
 			
 		</RelativeLayout>
+		
+    	<Button
+		    android:id="@+id/about_button"
+		    android:layout_width="fill_parent"
+		    android:layout_height="75dp"
+		    android:text="About This App"
+		    android:textStyle="bold"
+		    android:textSize="8pt"
+		    android:background="@drawable/calculate_button_gradient"
+		    android:padding="10dp"
+		    android:layout_gravity="center"
+		    android:layout_marginLeft="12dp"
+		    android:layout_marginRight="12dp"
+			android:layout_marginTop="10dp"
+			android:layout_marginBottom="5dp"
+		    android:onClick="onAboutClicked" />
 
 	</LinearLayout>
 		</ScrollView>

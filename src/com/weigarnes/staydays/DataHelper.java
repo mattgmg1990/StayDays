@@ -1,4 +1,4 @@
-package com.weigarnes.loser;
+package com.weigarnes.staydays;
 
 import java.io.FileNotFoundException;
 import java.io.IOException;

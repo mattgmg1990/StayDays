@@ -1,9 +1,9 @@
-package com.weigarnes.loser;
-
-import java.io.InputStream;
+package com.weigarnes.staydays;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.TextView;
 
 public class Result extends Activity{
@@ -35,16 +35,22 @@ public class Result extends Activity{
 	        String diagnosis = getIntent().getExtras().getString(DIAGNOSIS_EXTRA);
 	        String sex = getIntent().getExtras().getString(SEX_EXTRA);
 	        String age = getIntent().getExtras().getString(AGE_EXTRA);
-	        
+        
+	        ((TextView) findViewById(R.id.result_diagnosis_value)).setText(diagnosis);
+	        ((TextView) findViewById(R.id.result_sex_value)).setText(sex);
+	        ((TextView) findViewById(R.id.result_age_value)).setText(age);
+	        	        
 	        ((TextView) findViewById(R.id.stay_one_percent)).setText(percentOne + "% of Patients");
 	        ((TextView) findViewById(R.id.stay_two_percent)).setText(percentTwo + "% of Patients");
 	        ((TextView) findViewById(R.id.stay_three_percent)).setText(percentThree + "% of Patients");
 	        ((TextView) findViewById(R.id.stay_four_percent)).setText(percentFour + "% of Patients");
-	        
-	        ((TextView) findViewById(R.id.result_diagnosis_value)).setText(diagnosis);
-	        ((TextView) findViewById(R.id.result_sex_value)).setText(sex);
-	        ((TextView) findViewById(R.id.result_age_value)).setText(age);
 	    }
+	  
+	   public void onAboutClicked(View v){
+		   Intent aboutIntent = new Intent(Result.this, About.class);
+		   
+		   startActivity(aboutIntent);
+	   }
 	
 	  	
 }
