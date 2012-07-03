@@ -75,11 +75,11 @@ public class DataHelper {
 		return mDiagnosisToCode.keySet().toArray(new String[0]);
 	}
 	
-	public String[] findLosByInput(String diagnosis, String sex, String AgeGroup){
+	public String[] findLosByInput(String diagnosis, String sex, String AgeGroup) throws Exception{
 		String[] emptyResult = {"0","0","0","0","0","0","0"};
 		
 		if(!mDiagnosisToCode.containsKey(diagnosis)){
-			return emptyResult;
+			throw new Exception("No data found for the specified diagnosis.");
 		}
 		for(LosLine line : mLosData.get(mDiagnosisToCode.get(diagnosis))){
 			if(line.equals(diagnosis, sex, AgeGroup)){
