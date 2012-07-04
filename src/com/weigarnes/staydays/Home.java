@@ -20,6 +20,8 @@ public class Home extends Activity {
     private DataHelper mDataHelper;
     
     public AlertDialog mNoDataDialog;
+    
+    private String SAVED_GENDER_KEY = "savedGender";
 
     
     @Override
@@ -38,10 +40,51 @@ public class Home extends Activity {
 
     }
     
-    private void initializeAutoComplete(){
+    @Override
+	protected void onSaveInstanceState(Bundle outState) {
+		outState.putString(SAVED_GENDER_KEY, getSelectedGenderString());
+		super.onSaveInstanceState(outState);
+	}
+
+	@Override
+	protected void onRestoreInstanceState(Bundle savedInstanceState) {
+		restoreSelectedGender(savedInstanceState.getString(SAVED_GENDER_KEY));
+		super.onRestoreInstanceState(savedInstanceState);
+	}
+	
+	private void initializeAutoComplete(){
     	AutoCompleteTextView diagnosisInput = (AutoCompleteTextView) findViewById(R.id.autocomplete_diagnosis);
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, R.layout.list_item, mDataHelper.getDiagnoses());
         diagnosisInput.setAdapter(adapter);
+    }
+	
+	private String getSelectedGenderString(){
+		ImageButton femaleButton = (ImageButton) findViewById(R.id.female_button);
+    	ImageButton maleButton = (ImageButton) findViewById(R.id.male_button);
+    	
+    	if(femaleButton.isSelected()){
+    		return "female";
+    	}else if(maleButton.isSelected()){
+    		return "male";
+    	} else {
+    		return "none";
+    	}
+	}
+    
+    // If a gender has been selected, set the background.
+    private void restoreSelectedGender(String savedGender){
+    	ImageButton femaleButton = (ImageButton) findViewById(R.id.female_button);
+    	ImageButton maleButton = (ImageButton) findViewById(R.id.male_button);
+    	
+    	if(savedGender.equals("female")){
+    		femaleButton.setBackgroundResource(R.drawable.gender_button_bg);
+    		femaleButton.setSelected(true);
+    	}
+    	
+    	if(savedGender.equals("male")){
+    		maleButton.setBackgroundResource(R.drawable.gender_button_bg);
+    		maleButton.setSelected(true);
+    	}
     }
     
     // Initialize the spinner with the resource for age groups
@@ -102,6 +145,12 @@ public class Home extends Activity {
 	   String diagnosis = ((AutoCompleteTextView) findViewById(R.id.autocomplete_diagnosis)).getText().toString();
 	   String sex = "2";
 	   String ageGroup = Integer.toString(((Spinner) findViewById(R.id.age_group)).getSelectedItemPosition() + 1);
+	   
+	   // First, check that a gender has been selected.
+	   if(!findViewById(R.id.male_button).isSelected() && !findViewById(R.id.female_button).isSelected()){
+		   showDialog("Please Select A Gender", "You have not selected a gender. Please select one and try again.");
+		   return;
+	   }
 	   
 	   if(findViewById(R.id.male_button).isSelected()){
 		   sex = "1";
